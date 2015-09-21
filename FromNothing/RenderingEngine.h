@@ -57,7 +57,7 @@ private:
 	void InitRenderTarget();
 	void InitViewport();
 	void InitPipeline();
-	void InitShaders(ID3D10Blob** VS, ID3D10Blob** PS);
+	void InitShaders();
 	void InitGraphics();
 
 	D3DXMATRIX getViewMatrix();
