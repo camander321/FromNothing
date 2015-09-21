@@ -64,9 +64,9 @@ void RenderingEngine::SetMainCamera(Camera * camera)
 void RenderingEngine::RenderIndexedVerts(D3DXMATRIX worldMat, int numIndices, int indexOffset, int vertexOffset)
 {
 	CBUFFER cBuffer;
-	cBuffer.LightVector = D3DXVECTOR4(1.0f, 1.0f, 1.0f, 0.0f);
-	cBuffer.LightColor = D3DXCOLOR(0.5f, 0.5f, 0.5f, 1.0f);
-	cBuffer.AmbientColor = D3DXCOLOR(0.2f, 0.2f, 0.2f, 1.0f);
+	cBuffer.LightVector = D3DXVECTOR4(1.0f, -1.0f, 1.0f, 0.0f);
+	cBuffer.LightColor = D3DXCOLOR(0.8f, 0.8f, 0.8f, 1.0f);
+	cBuffer.AmbientColor = D3DXCOLOR(0.3f, 0.3f, 0.3f, 1.0f);
 	cBuffer.Final = worldMat * getViewMatrix() * getProjectionMatrix();
 	cBuffer.Rotation = worldMat;
 

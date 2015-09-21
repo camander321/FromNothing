@@ -14,7 +14,7 @@ Game::~Game()
 	root = NULL;
 }
 
-#define NUMCUBES 8
+#define NUMCUBES 1
 
 void Game::init()
 {

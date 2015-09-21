@@ -39,6 +39,10 @@ void Camera::updateObject()
 		}
 		if (x || y)
 			transform->Translate(x, 0, y);
+		if (input::GetKeyDown(' '))
+			transform->Translate(0, walkspeed, 0);
+		if (input::GetKeyDown('V'))
+			transform->Translate(0, -walkspeed, 0);
 	}
 
 	{

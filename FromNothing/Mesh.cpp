@@ -69,7 +69,7 @@ void Mesh::init(RenderingEngine * renderingEngine)
 
 void Mesh::LoadOBJ(std::string filename)
 {
-
+	debug::Log((int)verts.size());
 	struct FACE {
 		unsigned int v0, v1, v2, t0, t1, t2, n0, n1, n2;
 	};
@@ -128,19 +128,19 @@ void Mesh::LoadOBJ(std::string filename)
 		v = vertVec[faces[i].v0 - 1];
 		n = normVec[faces[i].n0 - 1];
 		t = txtrVec[faces[i].t0 - 1];
-		verts.push_back({ v.x, v.y, v.z, n.x, n.y, n.z, t.x, t.y });
+		verts.push_back({ -v.x, v.y, v.z, n.x, n.y, n.z, t.x, 1 - t.y });
 		indices.push_back(i * 3 + 0);
 
 		v = vertVec[faces[i].v1 - 1];
 		n = normVec[faces[i].n1 - 1];
 		t = txtrVec[faces[i].t1 - 1];
-		verts.push_back({ v.x, v.y, v.z, n.x, n.y, n.z, t.x, t.y });
-		indices.push_back(i * 3 + 1);
+		verts.push_back({ -v.x, v.y, v.z, n.x, n.y, n.z, t.x, 1-t.y });
+		indices.push_back(i * 3 + 2);
 
 		v = vertVec[faces[i].v2 - 1];
 		n = normVec[faces[i].n2 - 1];
 		t = txtrVec[faces[i].t2 - 1];
-		verts.push_back({ v.x, v.y, v.z, n.x, n.y, n.z, t.x, t.y });
-		indices.push_back(i * 3 + 2);
+		verts.push_back({ -v.x, v.y, v.z, n.x, n.y, n.z, t.x, 1-t.y });
+		indices.push_back(i * 3 + 1);
 	}
 }
