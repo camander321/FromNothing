@@ -8,7 +8,7 @@ class Mesh
 {
 public:
 	Mesh();
-	Mesh(std::string file);
+	Mesh(std::string filename);
 	~Mesh();
 	void init(RenderingEngine* renderingEngine);
 
